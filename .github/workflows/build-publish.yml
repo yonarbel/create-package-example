@@ -32,3 +32,5 @@ jobs:
          env:
           JF_ACCESS_TOKEN: ${{ secrets.JF_ACCESS_TOKEN }}
           JF_URL: ${{ secrets.JF_URL }}
+       - name: Install Deps
+         run:  cd package && jf rt npm-install
