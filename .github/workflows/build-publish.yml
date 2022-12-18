@@ -20,3 +20,5 @@ jobs:
           jf rt bag
           # Publish build info
           jf rt bp
+      - name: Show Config
+        run: jf c show
