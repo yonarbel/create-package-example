@@ -31,4 +31,4 @@ jobs:
          env:
           JF_ENV_1: ${{ secrets.JF_SECRET_ENV_1 }}
        - name: Install Deps
-         run:  jf npm-config --global=true --server-id-resolve=trialdemo --server-id-deploy=trialdemo --repo-resolve=default-npm --repo-deploy=default-npm && cd package && ls -la && jf npm install
+         run:  jf npm-config --global=true --server-id-resolve=trialdemo --server-id-deploy=trialdemo --repo-resolve=default-npm --repo-deploy=default-npm && cd package && rm -rf node_modules && ls -la && jf npm ci
