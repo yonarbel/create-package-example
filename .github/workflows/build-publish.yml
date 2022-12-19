@@ -33,4 +33,4 @@ jobs:
        - name: Clean Env
          run: cd package && rm -rf node_modules  && npm cache clean --force 
        - name: Install Deps
-         run:  jf npm-config --global=true --server-id-resolve=trialdemo --server-id-deploy=trialdemo --repo-resolve=default-npm --repo-deploy=default-npm && ls -la && jf npm ci
+         run:  jf npm-config --global=true --server-id-resolve=trialdemo --server-id-deploy=trialdemo --repo-resolve=default-npm --repo-deploy=default-npm && cd package && ls -la && jf npm ci
