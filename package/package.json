@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/yonarbel/create-package-example/issues"
   },
-  "homepage": "https://github.com/yonarbel/create-package-example#readme"
+  "homepage": "https://github.com/yonarbel/create-package-example#readme",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
 }
