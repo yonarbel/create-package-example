@@ -10,8 +10,7 @@ jobs:
       - name: Setup JFrog CLI
         uses: jfrog/setup-jfrog-cli@v3
         env:
-          JF_ACCESS_TOKEN: ${{ secrets.JF_ACCESS_TOKEN }}
-          JF_URL: ${{ secrets.JF_URL }}
+          JF_ENV_1: ${{ secrets.JF_SECRET_ENV_1 }}
       - name: Run JFrog CLI
         run: |
           # Collect environment variables for the build
@@ -30,7 +29,6 @@ jobs:
        - name: Setup JFrog CLI
          uses: jfrog/setup-jfrog-cli@v3
          env:
-          JF_ACCESS_TOKEN: ${{ secrets.JF_ACCESS_TOKEN }}
-          JF_URL: ${{ secrets.JF_URL }}
+          JF_ENV_1: ${{ secrets.JF_SECRET_ENV_1 }}
        - name: Install Deps
          run:  cd package && jf rt npm-install
