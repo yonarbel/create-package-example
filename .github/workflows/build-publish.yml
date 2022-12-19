@@ -3,25 +3,6 @@ on: push
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Setup JFrog CLI
-        uses: jfrog/setup-jfrog-cli@v3
-        env:
-          JF_ENV_1: ${{ secrets.JF_SECRET_ENV_1 }}
-      - name: Run JFrog CLI
-        run: |
-          # Collect environment variables for the build
-          jf rt bce
-          # Collect VCS details from git and add them to the build
-          jf rt bag
-          # Publish build info
-          jf rt bp
-      - name: Show Config
-        run: jf c show
-  test:
      runs-on: ubuntu-latest
      steps:
        - name: Checkout
@@ -38,3 +19,11 @@ jobs:
          run: cd package && rm -rf node_modules  && npm cache clean --force 
        - name: Install Deps
          run:  cd package && ls -la && jf npm install
+       - name: Publish Build info With JFrog CLI
+         run: |
+          # Collect environment variables for the build
+          jf rt bce
+          # Collect VCS details from git and add them to the build
+          jf rt bag
+          # Publish build info
+          jf rt bp
