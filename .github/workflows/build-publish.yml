@@ -37,4 +37,4 @@ jobs:
        - name: Clean Env
          run: cd package && rm -rf node_modules  && npm cache clean --force 
        - name: Install Deps
-         run:  cd package && ls -la && npm install
+         run:  cd package && ls -la && jf npm install
