@@ -1,5 +1,3 @@
-function frogGreet(string){
-    return string + ' 🐸';
-}
+const frogUtils = require("./frog-util");
 
-module.exports = frogGreet;
+module.exports = frogUtils;

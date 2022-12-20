@@ -1,3 +1,5 @@
-const frogGreet = require('frog-greet');
+const sum = require('frog-utils').sum;
+const greet = require('frog-utils').frogGreet;
 
-console.log(frogGreet('Im a '));
+console.log(greet('Im a '));
+console.log(sum(1,2));
