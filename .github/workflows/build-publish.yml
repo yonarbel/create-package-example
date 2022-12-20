@@ -19,6 +19,8 @@ jobs:
          run: cd package && rm -rf node_modules 
        - name: Install Deps
          run:  cd package && ls -la && jf npm install
+       - name: Run tests
+         run:  cd package && npm test
        - name: Publish Build info With JFrog CLI
          run: |
           # Collect environment variables for the build
