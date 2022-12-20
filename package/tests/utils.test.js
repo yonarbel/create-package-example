@@ -9,6 +9,6 @@ describe('sum module', () => {
 
   describe('greet module', () => {
     test('adds 🐸 ', () => {
-      expect(greet('testing')).toEqual('testing 🐸 ');
+      expect(greet('testing')).toEqual('testing 🐸');
     });
   });
