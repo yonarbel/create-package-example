@@ -8,7 +8,7 @@ jobs:
        - name: Checkout
          uses: actions/checkout@v3
        - name: Setup JFrog CLI
-         uses: jfrog/setup-jfrog-cli@v3
+         uses: jfrog/setup-jfrog-cli@v2
          env:
            JF_ENV_1: ${{ secrets.JF_SECRET_ENV_1 }}
        - name: Setup Node npm
