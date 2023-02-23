@@ -8,13 +8,13 @@ jobs:
        - name: Checkout
          uses: actions/checkout@v3
        - name: Setup JFrog CLI
-         uses: jfrog/setup-jfrog-cli@v2
+         uses: jfrog/setup-jfrog-cli@v3
          env:
            JF_ENV_1: ${{ secrets.JF_SECRET_ENV_1 }}
        - name: Setup Node npm
          uses: actions/setup-node@v3
        - name: Set CLI Config
-         run: jf npm-config --global=true --server-id-resolve=myjfrogtutorial --server-id-deploy=myjfrogtutorial --repo-resolve=my-npm --repo-deploy=my-npm
+         run: jf npm-config --global=true --server-id-resolve=myjfrogtutorial --server-id-deploy=myjfrogtutorial --repo-resolve=${{ vars.REPOSITORY_NAME }} --repo-deploy=${{ vars.REPOSITORY_NAME }}
        - name: Clean Env
          run: cd package && rm -rf node_modules 
        - name: Install Deps
