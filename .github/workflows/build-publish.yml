@@ -1,4 +1,4 @@
-name: "JFrog CLI Example"
+name: "JFrog Integration Example"
 on: push
 
 jobs:
@@ -9,12 +9,14 @@ jobs:
          uses: actions/checkout@v3
        - name: Setup JFrog CLI
          uses: jfrog/setup-jfrog-cli@v3
-         env:
-           JF_ENV_1: ${{ secrets.JF_SECRET_ENV_1 }}
+         env:  
+           SERVER_URL: ${{ secrets.SERVER_URL }}           # Required (e.g. https://jfrogy.com/artifactory)
+           ACCESS_TYPE: api-key                            # Required  (username-password, access-token, api-key)
+           API_KEY: ${{ secrets.API_KEY }}
        - name: Setup Node npm
          uses: actions/setup-node@v3
        - name: Set CLI Config
-         run: jf npm-config --global=true --server-id-resolve=myjfrogtutorial --server-id-deploy=myjfrogtutorial --repo-resolve=${{ vars.REPOSITORY_NAME }} --repo-deploy=${{ vars.REPOSITORY_NAME }}
+         run: jf npm-config --global=true --repo-resolve=my-npm --repo-deploy=my-npm
        - name: Clean Env
          run: cd package && rm -rf node_modules 
        - name: Install Deps
