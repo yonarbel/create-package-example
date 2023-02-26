@@ -10,7 +10,7 @@ jobs:
        - name: Setup JFrog CLI
          uses: jfrog/setup-jfrog-cli@v3
          env:  
-           SERVER_URL: ${{ secrets.SERVER_URL }}           # Required (e.g. https://jfrogy.com/artifactory)
+           SERVER_URL: https://myjfrogtutorial.jfrog.io/          # Required (e.g. https://jfrogy.com/artifactory)
            ACCESS_TYPE: api-key                            # Required  (username-password, access-token, api-key)
            API_KEY: ${{ secrets.API_KEY }}
        - name: Setup Node npm
